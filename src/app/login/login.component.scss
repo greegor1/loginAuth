@@ -1,0 +1,55 @@
+.loginBox {
+    border: 2px solid orange;
+    border-radius: 2px;
+    background-color: lightyellow;
+    padding: 15px;
+    height: 25vh;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    &__form {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        label {
+            font-size: 20px;
+            text-transform: capitalize;
+            padding-bottom: 10px;
+        }
+        input {
+            border: 1px solid orange;
+            border-radius: 2px;
+            height: 4vh;
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        input.ng-invalid.ng-touched {
+            border: 1px solid red;
+        }
+    }
+    
+    &__form-controler {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        padding: 10px 0;
+    }
+
+    &__form-btn {
+        width: 50%;
+        margin: 10px;
+        padding: 5px;
+        border: 2px solid orange;
+        background-color: orange;
+        border-radius: 2px;
+        outline: none;
+        text-transform: uppercase;
+        font-size: 80%;
+    }
+
+    &__form-btnwrapper {
+        display: flex;
+        width: 100%;
+    }
+}

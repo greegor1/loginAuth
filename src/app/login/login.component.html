@@ -1,0 +1,28 @@
+<div class="loginBox">
+    <form action="" class="loginBox__form" [formGroup]="loginFormGroup" (ngSubmit)="onSubmit()">
+        <div class="loginBox__form-controler">
+            <label for="login">login</label>
+            <input type="text" maxlength="10" minlength="4" formControlName="login">
+        </div>
+        <div class="loginBox__form-controler">
+            <label for="password">password</label>
+            <input type="password" maxlength="10" minlength="4" formControlName="password">
+        </div>
+        <div class="loginBox__form-btnwrapper">
+            <button type="submit" 
+                    class="loginBox__form-btn"
+                    [disabled]="!loginFormGroup.valid">login</button>
+            <button type="button" 
+                    class="loginBox__form-btn"
+                    (click)="onRegister()"
+                    [disabled]="!loginFormGroup.valid">register</button>
+        </div>
+        <p *ngIf="this.loginService.isLoading">Registering...</p>
+    </form>
+</div>
+<pre>Value: {{ loginFormGroup.value | json }}</pre>
+<pre>RawValue: {{ loginFormGroup.getRawValue() | json }}</pre>
+Valid: {{ loginFormGroup.valid }}
+Touched: {{ loginFormGroup.touched }}
+
+
